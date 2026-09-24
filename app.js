@@ -51,3 +51,7 @@ document.getElementById("three").onclick = () => {
 document.getElementById("five").onclick = () => {
   showRecommend("スタッフをお呼びします");
 };
+
+function goHome() {
+    window.location.href = "./";
+}
