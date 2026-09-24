@@ -1,68 +1,121 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CafePilot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+    <title>CafePilot</title>
 
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="home">
+<!-- ===================== -->
+<!-- 受付画面 -->
+<!-- ===================== -->
+<section id="screen-welcome" class="screen active">
 
-    <h1>☕ CafePilot</h1>
+    <h1>CafePilot</h1>
 
     <h2>いらっしゃいませ</h2>
 
-    <p>何名様ですか？</p>
+    <p class="sub">
+        何名様ですか？
+    </p>
 
-    <button id="one">1名</button>
+    <div class="people-buttons">
 
-    <button id="two">2名</button>
+        <button class="people-btn" data-people="1">1名</button>
+        <button class="people-btn" data-people="2">2名</button>
+        <button class="people-btn" data-people="3">3名</button>
+        <button class="people-btn" data-people="4">4名</button>
+        <button class="people-btn" data-people="5">5名</button>
+        <button class="people-btn" data-people="6">6名</button>
 
-    <button id="three">3〜4名</button>
+    </div>
 
-    <button id="five">5名以上</button>
+</section>
 
-</div>
 
-<div id="map" style="display:none;">
 
-<h2>空いている席をお選びください</h2>
+<!-- ===================== -->
+<!-- 席マップ -->
+<!-- ===================== -->
 
-<div class="floor">
+<section id="screen-map" class="screen">
 
-<div class="seat two" id="seat8" onclick="selectSeat(8)">⑧</div>
+    <h2>お好きな席をお選びください</h2>
 
-<div class="seat two" id="seat7" onclick="selectSeat(7)">⑦</div>
+    <div id="seat-map" class="seat-map">
 
-<div class="seat two" id="seat6" onclick="selectSeat(6)">⑥</div>
+    </div>
 
-<div class="seat four" id="seat5" onclick="selectSeat(5)">⑤</div>
+</section>
 
-<div class="seat four" id="seat4" onclick="selectSeat(4)">④</div>
 
-<div class="seat two" id="seat3" onclick="selectSeat(3)">③</div>
 
-<div class="seat two" id="seat2" onclick="selectSeat(2)">②</div>
+<!-- ===================== -->
+<!-- 席確認 -->
+<!-- ===================== -->
 
-<div class="seat two" id="seat1" onclick="selectSeat(1)">①</div>
+<section id="screen-seat" class="screen">
 
-</div>
+    <h2 id="seat-title"></h2>
 
-</div>
+    <div class="seat-preview">
 
-<div id="result" style="display:none;">
+        <div id="seat-number"
+             class="seat-preview-box">
+        </div>
 
-<h1 id="seatNumber"></h1>
+    </div>
 
-<p>こちらのお席へどうぞ</p>
+    <div class="button-area">
 
-</div>
+        <button id="back-map-btn"
+                class="secondary">
+            他の席を見る
+        </button>
+
+        <button id="confirm-btn"
+                class="primary">
+            この席にする
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================== -->
+<!-- 完了画面 -->
+<!-- ===================== -->
+
+<section id="screen-complete" class="screen">
+
+    <h2>ありがとうございます</h2>
+
+    <p>
+
+        スタッフがご案内いたします
+
+    </p>
+
+    <div class="complete-seat">
+
+        <span id="complete-seat-number"></span>
+
+    </div>
+
+    <p id="countdown"></p>
+
+</section>
+
+
 
 <script src="app.js"></script>
 
 </body>
 </html>
+
