@@ -1,37 +1,28 @@
-function selectGuest(count){
-
-    document.getElementById("home").style.display = "none";
-    document.getElementById("map").style.display = "block";
-
-    // いったん全席を表示
-    const seats = document.querySelectorAll(".seat");
-
-    seats.forEach(seat=>{
-        seat.style.display = "flex";
-    });
-
-    // 2名以下なら4名席を非表示
-    if(count <= 2){
-
-        document.getElementById("seat4").style.display = "none";
-        document.getElementById("seat5").style.display = "none";
-
-    }
-
+function showSeat(message) {
+  document.body.innerHTML = `
+    <div style="text-align:center;margin-top:80px;font-family:sans-serif;">
+      <h1>${message}</h1>
+      <br><br>
+      <button onclick="location.reload()"
+      style="font-size:24px;padding:15px 40px;">
+      最初に戻る
+      </button>
+    </div>
+  `;
 }
 
-function selectSeat(number){
+document.getElementById("one").onclick = () => {
+  showSeat("カウンター①へどうぞ");
+};
 
-    document.getElementById("map").style.display="none";
-    document.getElementById("result").style.display="block";
+document.getElementById("two").onclick = () => {
+  showSeat("テーブルAへどうぞ");
+};
 
-    document.getElementById("seatNumber").innerHTML =
-        "⑦".replace("⑦","") + number + "番席です";
+document.getElementById("three").onclick = () => {
+  showSeat("テーブルCへどうぞ");
+};
 
-    setTimeout(function(){
-
-        location.reload();
-
-    },5000);
-
-}
+document.getElementById("five").onclick = () => {
+  showSeat("スタッフをお呼びします");
+};
