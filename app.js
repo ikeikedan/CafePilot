@@ -14,10 +14,10 @@ function showRecommend(message) {
 
       <br><br>
 
-      <button onclick="location.reload()"
-      style="font-size:20px;padding:12px 30px;">
-      他の席を見る
-      </button>
+      <button onclick="goHome()"
+　　　　style="font-size:20px;padding:12px 30px;">
+          他の席を見る
+　　　　</button>
 
     </div>
   `;
