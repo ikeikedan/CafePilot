@@ -127,3 +127,14 @@ button:active{
     font-weight:bold;
     cursor:pointer;
 }
+#seat8{ top:40px; left:60px; }
+#seat5{ top:40px; left:250px; }
+
+#seat7{ top:170px; left:60px; }
+#seat4{ top:170px; left:250px; }
+
+#seat6{ top:340px; left:60px; }
+
+#seat3{ top:90px; right:80px; }
+#seat2{ top:220px; right:80px; }
+#seat1{ top:350px; right:80px; }
