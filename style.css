@@ -1,141 +1,164 @@
-body{
+:::writing{variant="document" id="am7bd2-style" title="style.css"}
+*{
     margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;
-    background:#f5f3ee;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+    background:#f4f4f4;
+    color:#333;
+    height:100vh;
+}
+
+.screen{
+    display:none;
+    width:100%;
+    height:100vh;
+    padding:40px;
     text-align:center;
 }
 
-#home{
-    margin-top:40px;
+.screen.active{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 }
 
 h1{
-    color:#5b7a55;
-    font-size:52px;
-    margin-bottom:10px;
+    font-size:48px;
+    margin-bottom:20px;
 }
 
 h2{
-    font-size:38px;
-    margin-bottom:10px;
+    font-size:36px;
+    margin-bottom:20px;
 }
 
-p{
-    font-size:28px;
+.sub{
+    font-size:26px;
+    margin-bottom:30px;
+}
+
+.people-buttons{
+    display:grid;
+    grid-template-columns:repeat(3,180px);
+    gap:20px;
+}
+
+.people-btn{
+    height:90px;
+    font-size:34px;
+    border:none;
+    border-radius:16px;
+    background:#4CAF50;
+    color:#fff;
+}
+
+.people-btn:active{
+    transform:scale(.96);
+}
+
+.seat-map{
+    display:grid;
+    grid-template-columns:repeat(4,170px);
+    gap:25px;
+    margin-top:20px;
+}
+
+.seat{
+    height:120px;
+    border-radius:16px;
+    background:#ffffff;
+    border:3px solid #999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.seat:hover{
+    background:#e8f5e9;
+}
+
+.seat-preview{
+    margin:40px 0;
+}
+
+.seat-preview-box{
+    width:220px;
+    height:220px;
+    border-radius:18px;
+    background:white;
+    border:4px solid #4CAF50;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+}
+
+.button-area{
+    display:flex;
+    gap:30px;
 }
 
 button{
-    width:320px;
-    height:90px;
-    margin:12px;
-    font-size:32px;
+    min-width:220px;
+    height:70px;
+    font-size:28px;
     border:none;
-    border-radius:18px;
-    background:#6fa46b;
-    color:white;
+    border-radius:14px;
 }
 
-button:active{
-    transform:scale(0.98);
-}
-
-#map{
-    padding-top:20px;
-}
-
-.floor{
-    position:relative;
-    width:820px;
-    height:520px;
-    margin:20px auto;
-    background:white;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,.15);
-}
-
-.seat{
-    position:absolute;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    font-size:34px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.two{
-    width:90px;
-    height:90px;
-    background:#36b24a;
-    border-radius:16px;
-}
-
-.four{
-    width:120px;
-    height:120px;
-    background:#36b24a;
-    border-radius:16px;
-}
-
-/* 席配置 */
-
-#seat8{ left:60px; top:40px; }
-
-#seat7{ left:60px; top:180px; }
-
-#seat6{ left:60px; top:340px; }
-
-#seat5{ left:340px; top:40px; }
-
-#seat4{ left:340px; top:220px; }
-
-#seat3{ left:650px; top:40px; }
-
-#seat2{ left:650px; top:190px; }
-
-#seat1{ left:650px; top:340px; }
-
-#result{
-    margin-top:80px;
-}
-
-#seatNumber{
-    font-size:64px;
-    color:#2f7d32;
-}
-.floor{
-    position:relative;
-    width:700px;
-    height:500px;
-    margin:30px auto;
-    border:4px solid #444;
-    border-radius:20px;
-}
-
-.seat{
-    position:absolute;
-    width:60px;
-    height:60px;
-    border-radius:50%;
+.primary{
     background:#4CAF50;
     color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:24px;
-    font-weight:bold;
-    cursor:pointer;
 }
 
-#seat8{ top:40px; left:60px; }
-#seat5{ top:40px; left:250px; }
+.secondary{
+    background:#757575;
+    color:white;
+}
 
-#seat7{ top:170px; left:60px; }
-#seat4{ top:170px; left:250px; }
+.complete-seat{
+    width:200px;
+    height:200px;
+    border-radius:18px;
+    background:white;
+    border:4px solid #4CAF50;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:80px;
+    margin:30px;
+}
 
-#seat6{ top:340px; left:60px; }
+#countdown{
+    margin-top:25px;
+    font-size:26px;
+    color:#666;
+}
 
-#seat3{ top:90px; right:80px; }
-#seat2{ top:220px; right:80px; }
-#seat1{ top:350px; right:80px; }
+/* 店内レイアウト
+   8 5
+   7 4
+   6 3
+   2 1
+*/
+
+.seat[data-seat="8"]{grid-column:1;grid-row:1;}
+.seat[data-seat="5"]{grid-column:2;grid-row:1;}
+
+.seat[data-seat="7"]{grid-column:1;grid-row:2;}
+.seat[data-seat="4"]{grid-column:2;grid-row:2;}
+
+.seat[data-seat="6"]{grid-column:1;grid-row:3;}
+.seat[data-seat="3"]{grid-column:2;grid-row:3;}
+
+.seat[data-seat="2"]{grid-column:1;grid-row:4;}
+.seat[data-seat="1"]{grid-column:2;grid-row:4;}
+:::
