@@ -4,8 +4,8 @@ function showSeat(message) {
       <h1>${message}</h1>
       <br><br>
       <button onclick="location.reload()"
-      style="font-size:24px;padding:15px 40px;">
-      最初に戻る
+        style="font-size:24px;padding:15px 40px;">
+        最初に戻る
       </button>
     </div>
   `;
